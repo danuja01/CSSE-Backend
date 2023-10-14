@@ -1,4 +1,3 @@
-import { getUserByToken } from '@/services/auth';
 import { deleteCard, getCardByID, getCardByUserId, getCards, saveCard, updateCard } from '@/services/card';
 import { makeResponse } from '@/utils';
 

@@ -4,6 +4,7 @@ import crypto from 'crypto';
 import createError from 'http-errors';
 import { createUser, findOneAndUpdateUser, getOneUser } from '@/repository/user';
 import { decodeToken } from '@/utils';
+import { createAccountService } from './account';
 import { sendMail } from './email';
 
 export const authRegister = async ({ name, email, password }) => {
@@ -20,6 +21,11 @@ export const authRegister = async ({ name, email, password }) => {
     password: encryptedPassword,
     verification_code: verification_code
   });
+  try {
+    await createAccountService(registeredUser._id);
+  } catch (err) {
+    throw new createError(500, 'An error occurred when creating the account');
+  }
   await verifyMailTemplate(email, verification_code);
   return registeredUser;
 };
