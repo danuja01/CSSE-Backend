@@ -15,6 +15,7 @@ specifiers:
   '@trivago/prettier-plugin-sort-imports': 4.2.0
   babel-plugin-module-resolver: 5.0.0
   bcryptjs: 2.4.3
+  card-validator: 8.1.1
   celebrate: 15.0.1
   compression: 1.7.4
   cors: 2.8.5
@@ -42,6 +43,7 @@ dependencies:
   '@sliit-foss/http-logger': 1.1.2
   '@sliit-foss/module-logger': 1.1.5
   bcryptjs: 2.4.3
+  card-validator: 8.1.1
   celebrate: 15.0.1
   compression: 1.7.4
   cors: 2.8.5
@@ -2221,6 +2223,12 @@ packages:
     resolution: {integrity: sha512-rup09/e3I0BKjncL+FesTayKtPrdwKhUufQFd3riFw1hHg8JmIFoInYfB102cFcY/pPgGmdyl/iy+jgiDi2vdA==}
     dev: true
 
+  /card-validator/8.1.1:
+    resolution: {integrity: sha512-cN4FsKwoTfTFnqPwVc7TQLSsH/QMDB3n/gWm0XelcApz4sKipnOQ6k33sa3bWsNnnIpgs7eXOF+mUV2UQAX2Sw==}
+    dependencies:
+      credit-card-type: 9.1.0
+    dev: false
+
   /celebrate/15.0.1:
     resolution: {integrity: sha512-K2y221k10u+K2t9w25802qXh8h1mVWZf+6pl7zHdlhhwzrOSQFnnw+GsR8k17oyn4Y3fVErBGsO/+CeW8N7aRQ==}
     dependencies:
@@ -2472,6 +2480,10 @@ packages:
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
+
+  /credit-card-type/9.1.0:
+    resolution: {integrity: sha512-CpNFuLxiPFxuZqhSKml3M+t0K/484pMAnfYWH14JoD7OZMnmC0Lmo+P7JX9SobqFpRoo7ifA18kOHdxJywYPEA==}
+    dev: false
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
