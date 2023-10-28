@@ -9,5 +9,5 @@ export const accountIdSchema = {
 };
 
 export const updateAccountSchema = {
-  userId: Joi.string().hex().length(24).optional()
+  amount: Joi.number().required()
 };
