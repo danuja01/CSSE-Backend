@@ -23,6 +23,12 @@ before(function (done) {
       console.log('Connection error:', error);
       done(error);
     });
+
+  // drop every collection in the database
+  const dropCollections = async () => {
+    await mongoose.connection.dropDatabase();
+  };
+  dropCollections();
 });
 
 describe('Database connection', () => {
@@ -30,3 +36,5 @@ describe('Database connection', () => {
     expect(mongoose.connection.readyState).to.equal(1);
   });
 });
+
+export default mongoose;
