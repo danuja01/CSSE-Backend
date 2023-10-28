@@ -6,6 +6,7 @@ specifiers:
   '@babel/eslint-parser': 7.22.9
   '@babel/node': 7.22.6
   '@babel/preset-env': 7.22.9
+  '@babel/register': 7.22.15
   '@commitlint/cli': 17.6.7
   '@commitlint/config-conventional': 17.6.7
   '@sliit-foss/eslint-config-internal': 1.1.4
@@ -17,6 +18,7 @@ specifiers:
   bcryptjs: 2.4.3
   card-validator: 8.1.1
   celebrate: 15.0.1
+  chai: 4.3.10
   compression: 1.7.4
   cors: 2.8.5
   dotenv: 16.3.1
@@ -29,7 +31,6 @@ specifiers:
   helmet: 7.0.0
   http-errors: 2.0.0
   jsonwebtoken: 9.0.1
-  lefthook: 1.4.8
   lodash: 4.17.21
   mocha: 10.2.0
   mongoose: 7.4.2
@@ -38,6 +39,7 @@ specifiers:
   nodemailer: 6.9.4
   nodemon: 3.0.1
   prettier: 3.0.0
+  sinon: 17.0.0
 
 dependencies:
   '@sliit-foss/functions': 2.2.3
@@ -46,6 +48,7 @@ dependencies:
   bcryptjs: 2.4.3
   card-validator: 8.1.1
   celebrate: 15.0.1
+  chai: 4.3.10
   compression: 1.7.4
   cors: 2.8.5
   express: 4.18.2
@@ -61,6 +64,7 @@ dependencies:
   mongoose-aggregate-paginate-v2: 1.0.6
   mongoose-paginate-v2: 1.7.31
   nodemailer: 6.9.4
+  sinon: 17.0.0
 
 devDependencies:
   '@babel/cli': 7.22.9_@babel+core@7.22.9
@@ -68,6 +72,7 @@ devDependencies:
   '@babel/eslint-parser': 7.22.9_axs2dsjw4odenitrrvah4wsynm
   '@babel/node': 7.22.6_@babel+core@7.22.9
   '@babel/preset-env': 7.22.9_@babel+core@7.22.9
+  '@babel/register': 7.22.15_@babel+core@7.22.9
   '@commitlint/cli': 17.6.7
   '@commitlint/config-conventional': 17.6.7
   '@sliit-foss/eslint-config-internal': 1.1.4
@@ -76,7 +81,6 @@ devDependencies:
   dotenv: 16.3.1
   eslint: 8.46.0
   eslint-plugin-import: 2.28.0_eslint@8.46.0
-  lefthook: 1.4.8
   nodemon: 3.0.1
   prettier: 3.0.0
 
@@ -413,7 +417,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.9
-      '@babel/register': 7.22.5_@babel+core@7.22.9
+      '@babel/register': 7.22.15_@babel+core@7.22.9
       commander: 4.1.1
       core-js: 3.32.0
       node-environment-flags: 1.0.6
@@ -1276,8 +1280,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /@babel/register/7.22.5_@babel+core@7.22.9:
-    resolution: {integrity: sha512-vV6pm/4CijSQ8Y47RH5SopXzursN35RQINfGJkmOlcpAtGuf94miFvIPhCKGQN7WGIcsgG1BHEX2KVdTYwTwUQ==}
+  /@babel/register/7.22.15_@babel+core@7.22.9:
+    resolution: {integrity: sha512-V3Q3EqoQdn65RCgTLwauZaTfd1ShhwPmbBv+1dkZV/HpCGMKVyn6oFcRlI7RaKqiDQjX2Qd3AuoEguBgdjIKlg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1706,6 +1710,42 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: false
 
+  /@sinonjs/commons/2.0.0:
+    resolution: {integrity: sha512-uLa0j859mMrg2slwQYdO/AkrOfmH+X6LTVmNTS9CqexuE2IvVORIkSpJLqePAbEnKJ77aMmCwr1NUZ57120Xcg==}
+    dependencies:
+      type-detect: 4.0.8
+    dev: false
+
+  /@sinonjs/commons/3.0.0:
+    resolution: {integrity: sha512-jXBtWAF4vmdNmZgD5FoKsVLv3rPgDnLgPbU84LIJ3otV44vJlDRokVng5v8NFJdCf/da9legHcKaRuZs4L7faA==}
+    dependencies:
+      type-detect: 4.0.8
+    dev: false
+
+  /@sinonjs/fake-timers/10.3.0:
+    resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
+    dependencies:
+      '@sinonjs/commons': 3.0.0
+    dev: false
+
+  /@sinonjs/fake-timers/11.2.2:
+    resolution: {integrity: sha512-G2piCSxQ7oWOxwGSAyFHfPIsyeJGXYtc6mFbnFA+kRXkiEnTl8c/8jul2S329iFBnDI9HGoeWWAZvuvOkZccgw==}
+    dependencies:
+      '@sinonjs/commons': 3.0.0
+    dev: false
+
+  /@sinonjs/samsam/8.0.0:
+    resolution: {integrity: sha512-Bp8KUVlLp8ibJZrnvq2foVhP0IVX2CIprMJPK0vqGqgrDa0OHVKeZyBykqskkrdxV6yKBPmGasO8LVjAKR3Gew==}
+    dependencies:
+      '@sinonjs/commons': 2.0.0
+      lodash.get: 4.4.2
+      type-detect: 4.0.8
+    dev: false
+
+  /@sinonjs/text-encoding/0.7.2:
+    resolution: {integrity: sha512-sXXKG+uL9IrKqViTtao2Ws6dy0znu9sOaP1di/jKGW1M6VssO8vlpXCQcpZ+jisQ1tTFAC5Jo/EOzFbggBagFQ==}
+    dev: false
+
   /@sliit-foss/eslint-config-internal/1.1.4:
     resolution: {integrity: sha512-EERle7sDlqnAf4XcPfkMyki3gRvKSmzjIz6LzBH3IPdBwQACvhgye8oPcZ3bUe/d41z+5gLweMYCPEttYqjw4A==}
     dev: true
@@ -2047,6 +2087,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /assertion-error/1.1.0:
+    resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
+    dev: false
+
   /async-hook-jl/1.7.6:
     resolution: {integrity: sha512-gFaHkFfSxTjvoxDMYqDuGHlcRyUuamF8s+ZTtJdDzqjws4mCt7v0vuV79/E2Wr2/riMQgtG4/yUtXWs1gZ7JMg==}
     engines: {node: ^4.7 || >=6.9 || >=7.3}
@@ -2244,6 +2288,19 @@ packages:
       lodash: 4.17.21
     dev: false
 
+  /chai/4.3.10:
+    resolution: {integrity: sha512-0UXG04VuVbruMUYbJ6JctvH0YnC/4q3/AkT18q4NaITo91CUm0liMS9VqzT9vZhVQ/1eqPanMWjBM+Juhfb/9g==}
+    engines: {node: '>=4'}
+    dependencies:
+      assertion-error: 1.1.0
+      check-error: 1.0.3
+      deep-eql: 4.1.3
+      get-func-name: 2.0.2
+      loupe: 2.3.7
+      pathval: 1.1.1
+      type-detect: 4.0.8
+    dev: false
+
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
     engines: {node: '>=4'}
@@ -2259,6 +2316,12 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+
+  /check-error/1.0.3:
+    resolution: {integrity: sha512-iKEoDYaRmd1mxM90a2OEfWhjsjPpYPuQ+lMYsoxB126+t8fw7ySEO48nmDg5COTjxDI65/Y2OWpeEHk3ZOe8zg==}
+    dependencies:
+      get-func-name: 2.0.2
+    dev: false
 
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
@@ -2586,6 +2649,13 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /deep-eql/4.1.3:
+    resolution: {integrity: sha512-WaEtAOpRA1MQ0eohqZjpGD8zdI0Ovsm8mmFhaDN8dvDZzyoUMcYDnf5Y6iu7HTXxf8JDS23qWa4a+hKCDyOPzw==}
+    engines: {node: '>=6'}
+    dependencies:
+      type-detect: 4.0.8
+    dev: false
+
   /deep-is/0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
@@ -2615,6 +2685,11 @@ packages:
 
   /diff/5.0.0:
     resolution: {integrity: sha512-/VTCrvm5Z0JGty/BWHljh+BAiw3IK+2j87NGMu8Nwc/f48WoDAC395uomO9ZD117ZOBaHmkX1oyLvkVM/aIT3w==}
+    engines: {node: '>=0.3.1'}
+    dev: false
+
+  /diff/5.1.0:
+    resolution: {integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==}
     engines: {node: '>=0.3.1'}
     dev: false
 
@@ -3213,6 +3288,10 @@ packages:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
     engines: {node: 6.* || 8.* || >= 10.*}
 
+  /get-func-name/2.0.2:
+    resolution: {integrity: sha512-8vXOvuE167CtIc3OyItco7N/dpRtBbYOsPsXCz7X/PMnlGjYjSGuZJgM1Y7mmew7BKf9BqvLX2tnOVy1BBUsxQ==}
+    dev: false
+
   /get-intrinsic/1.2.1:
     resolution: {integrity: sha512-2DcsyfABl+gVHEfCOaTrWgyt+tb6MSEGmKq+kI5HwLbIYgjgmMcV8KQ41uaKz1xxUcn9tJtgFbQUEVcEbd0FYw==}
     dependencies:
@@ -3667,6 +3746,10 @@ packages:
       call-bind: 1.0.2
     dev: true
 
+  /isarray/0.0.1:
+    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
+    dev: false
+
   /isarray/2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: true
@@ -3767,6 +3850,10 @@ packages:
       semver: 7.5.4
     dev: false
 
+  /just-extend/4.2.1:
+    resolution: {integrity: sha512-g3UB796vUFIY90VIv/WX3L2c8CS2MdWUww3CNrYmqza1Fg0DURc2K/O4YrnklBdQarSJ/y8JnJYDGc+1iumQjg==}
+    dev: false
+
   /jwa/1.4.1:
     resolution: {integrity: sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA==}
     dependencies:
@@ -3795,85 +3882,6 @@ packages:
   /kuler/2.0.0:
     resolution: {integrity: sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==}
     dev: false
-
-  /lefthook-darwin-arm64/1.4.8:
-    resolution: {integrity: sha512-wUaasRq7P1BNAlGwu/vONVHrwlrTwQGEhyn0leciEcnQCUN8aTeEC4hkxHmxisgQVQTdidYkCSWcsaEFn84xzw==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-darwin-x64/1.4.8:
-    resolution: {integrity: sha512-uUkQeU08szL4IpKVQSlhzNObZ79YkwmZ3fZDmF+jjP69LMESEVY7Y+cuQI0RG4YOTXHGBqZs3MPUZ7ZygBrhcQ==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-freebsd-arm64/1.4.8:
-    resolution: {integrity: sha512-X4rWxsmxfyMRgfIOqAnk2zrMzlJV0fANEDYNuUYBVbgH8IYAy1cyVQlolgeC8NhFW8VaJ3AztbWpnR1M8zEByA==}
-    cpu: [arm64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-freebsd-x64/1.4.8:
-    resolution: {integrity: sha512-ijenlZtEZpbnLFWTZdsIDmVdLzkaTkeEQVjjHEXdo2GBjLmdLYk8hRQiY/7oUxFe/JO1RLuhfIlPkKLtYz1iTQ==}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-linux-arm64/1.4.8:
-    resolution: {integrity: sha512-lOsJymblZ8nIpgm2lLfWx33tXtkdamK0lZThbSK4uwZQWFzSjr9qx21qZlJZ/mG8jZ5EY5Twhjqrt131CUXtMw==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-linux-x64/1.4.8:
-    resolution: {integrity: sha512-tF/iQFZu9iR++C3UXvpeTQS50CtTdZWmeMJ49uAovu9qe3qpPdKoguorZSFDC2+OGYbd7wbulldpWhvgxarniA==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-windows-arm64/1.4.8:
-    resolution: {integrity: sha512-ykqX5rm5UI6244cF6anf92p+JXNvuA/Ah3bpQKYSA5JoMG2vJmPZ9nIThq5ky/F90jXySBxcdZRdrridtagAbw==}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-windows-x64/1.4.8:
-    resolution: {integrity: sha512-wv8in0vku5eDpjNtri4s02kXbowEa6t/h8pHHUnCedmJJ2ImwwqGQJ1kwDVQL0U3bgdNWCfC2mUxVmtXoLQkBg==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook/1.4.8:
-    resolution: {integrity: sha512-SALO6nIy0aizM3FJdy4cNdUy9qKJyGZo6f8gZdzhBuKLMrwnm9YeMdJmQKeEPZA9E2mDSqdHGJjvMlKrm+04Pg==}
-    hasBin: true
-    requiresBuild: true
-    optionalDependencies:
-      lefthook-darwin-arm64: 1.4.8
-      lefthook-darwin-x64: 1.4.8
-      lefthook-freebsd-arm64: 1.4.8
-      lefthook-freebsd-x64: 1.4.8
-      lefthook-linux-arm64: 1.4.8
-      lefthook-linux-x64: 1.4.8
-      lefthook-windows-arm64: 1.4.8
-      lefthook-windows-x64: 1.4.8
-    dev: true
 
   /levn/0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -3915,6 +3923,10 @@ packages:
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
+
+  /lodash.get/4.4.2:
+    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    dev: false
 
   /lodash.isfunction/3.0.9:
     resolution: {integrity: sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==}
@@ -3972,6 +3984,12 @@ packages:
       ms: 2.1.3
       safe-stable-stringify: 2.4.3
       triple-beam: 1.4.1
+    dev: false
+
+  /loupe/2.3.7:
+    resolution: {integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==}
+    dependencies:
+      get-func-name: 2.0.2
     dev: false
 
   /lru-cache/5.1.1:
@@ -4248,6 +4266,16 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
+  /nise/5.1.5:
+    resolution: {integrity: sha512-VJuPIfUFaXNRzETTQEEItTOP8Y171ijr+JLq42wHes3DiryR8vT+1TXQW/Rx8JNUhyYYWyIvjXTU6dOhJcs9Nw==}
+    dependencies:
+      '@sinonjs/commons': 2.0.0
+      '@sinonjs/fake-timers': 10.3.0
+      '@sinonjs/text-encoding': 0.7.2
+      just-extend: 4.2.1
+      path-to-regexp: 1.8.0
+    dev: false
+
   /node-environment-flags/1.0.6:
     resolution: {integrity: sha512-5Evy2epuL+6TM0lCQGpFIj6KwiEsGh1SrHUhTbNX+sLbBtjidPZFAnVK9y5yU1+h//RitLbRHTIMyxQPtxMdHw==}
     dependencies:
@@ -4517,10 +4545,20 @@ packages:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
     dev: false
 
+  /path-to-regexp/1.8.0:
+    resolution: {integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==}
+    dependencies:
+      isarray: 0.0.1
+    dev: false
+
   /path-type/4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
     dev: true
+
+  /pathval/1.1.1:
+    resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
+    dev: false
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
@@ -4940,6 +4978,17 @@ packages:
       semver: 7.5.4
     dev: true
 
+  /sinon/17.0.0:
+    resolution: {integrity: sha512-p4lJiYKBoOEVUxxVIC9H1MM2znG1/c8gud++I2BauJA5hsz7hHsst35eurNWXTusBsIq66FzOQbZ/uMdpvbPIQ==}
+    dependencies:
+      '@sinonjs/commons': 3.0.0
+      '@sinonjs/fake-timers': 11.2.2
+      '@sinonjs/samsam': 8.0.0
+      diff: 5.1.0
+      nise: 5.1.5
+      supports-color: 7.2.0
+    dev: false
+
   /slash/2.0.0:
     resolution: {integrity: sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==}
     engines: {node: '>=6'}
@@ -5221,6 +5270,11 @@ packages:
     dependencies:
       prelude-ls: 1.2.1
     dev: true
+
+  /type-detect/4.0.8:
+    resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
+    engines: {node: '>=4'}
+    dev: false
 
   /type-fest/0.18.1:
     resolution: {integrity: sha512-OIAYXk8+ISY+qTOwkHtKqzAuxchoMiD9Udx+FSGQDuiRR+PJKJHc2NJAXlbhkGwTt/4/nKZxELY1w3ReWOL8mw==}
