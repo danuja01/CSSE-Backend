@@ -12,7 +12,8 @@
     "format": "prettier --write --cache \"**/*.{js,md}\"",
     "lint": "eslint src --ext js,md --ignore-path .gitignore --fix --cache --report-unused-disable-directives",
     "start": "node dist/app.js",
-    "test": "mocha --require @babel/register test/**/*.test.js --timeout 10000 --exit"
+    "test": "mocha --require @babel/register test/**/*.test.js --timeout 10000 --exit",
+    "test:cus": "mocha --require @babel/register test/unit/database/db.test.js test/unit/models/busRoute.test.js --timeout 10000 --exit"
   },
   "keywords": [],
   "author": "",
