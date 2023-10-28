@@ -7,16 +7,18 @@ export const getAccountByUserId = async (req, res) => {
 };
 
 export const topUp = async (req, res) => {
-  const accountId = (await getAccountByUserIdService(req.user._id))._id;
+  const userId = req.user._id;
+  const accountId = (await getAccountByUserIdService(userId))._id;
   const { amount } = req.body;
-  await topUpAccount(accountId, amount);
+  await topUpAccount(userId, accountId, amount);
   return makeResponse({ res, message: 'Account topped up successfully' });
 };
 
 export const payment = async (req, res) => {
-  const accountId = (await getAccountByUserIdService(req.user._id))._id;
+  const userId = req.user._id;
+  const accountId = (await getAccountByUserIdService(userId))._id;
   const { amount } = req.body;
-  await makePayment(accountId, amount);
+  await makePayment(userId, accountId, amount);
   return makeResponse({ res, message: 'Payment made successfully' });
 };
 
