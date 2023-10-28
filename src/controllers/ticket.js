@@ -1,5 +1,20 @@
 import { scanQRService, getAllTicketsService, getTicketByIdService } from '@/services/ticket';
 import { makeResponse } from '@/utils';
+const QRCode = require('qrcode');
+
+export const generateQR = async (req, res) => {
+    const busStop = req.body.busStop;
+    const busRoute = req.body.busRoute;
+
+    const payload = {
+        busStop: busStop,
+        busRoute: busRoute
+    };
+
+    const qrCode = await QRCode.toDataURL(JSON.stringify(payload));
+
+    return makeResponse({ res, data: qrCode, message: 'Inspector - QR code generated succesfully' });
+};
 
 export const scanQR = async (req, res) => {
     const ticket = await scanQRService(req.body);
