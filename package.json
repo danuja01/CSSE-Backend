@@ -12,7 +12,8 @@
     "format": "prettier --write --cache \"**/*.{js,md}\"",
     "lint": "eslint src --ext js,md --ignore-path .gitignore --fix --cache --report-unused-disable-directives",
     "start": "node dist/app.js",
-    "test": "echo test"
+    "test": "mocha --require @babel/register test/**/*.test.js --timeout 10000 --exit",
+    "test:cus": "mocha --require @babel/register test/unit/database/db.test.js test/unit/models/busRoute.test.js --timeout 10000 --exit"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "bcryptjs": "2.4.3",
     "card-validator": "8.1.1",
     "celebrate": "15.0.1",
+    "chai": "4.3.10",
     "compression": "1.7.4",
     "cors": "2.8.5",
     "express": "4.18.2",
@@ -34,11 +36,13 @@
     "http-errors": "2.0.0",
     "jsonwebtoken": "9.0.1",
     "lodash": "4.17.21",
+    "mocha": "10.2.0",
     "mongoose": "7.4.2",
     "mongoose-aggregate-paginate-v2": "1.0.6",
     "mongoose-paginate-v2": "1.7.31",
     "nodemailer": "6.9.4",
-    "qrcode": "1.5.3"
+    "qrcode": "1.5.3",
+    "sinon": "17.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.22.9",
@@ -46,6 +50,7 @@
     "@babel/eslint-parser": "7.22.9",
     "@babel/node": "7.22.6",
     "@babel/preset-env": "7.22.9",
+    "@babel/register": "7.22.15",
     "@commitlint/cli": "17.6.7",
     "@commitlint/config-conventional": "17.6.7",
     "@sliit-foss/eslint-config-internal": "1.1.4",

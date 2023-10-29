@@ -24,18 +24,18 @@ export const getAccountByUserIdService = async (userId) => {
   return account;
 };
 
-export const topUpAccount = async (accountId, amount) => {
-  const account = await findAccountById(accountId);
+export const topUpAccount = async (userId, accountId, amount) => {
+  const account = await findAccountById(userId, accountId);
   if (!account) {
     throw new createError(404, 'Account not found');
   }
 
-  await updateAccountBalance(accountId, amount, 'credit');
+  await updateAccountBalance(userId, accountId, amount, 'credit');
   await createTransaction(accountId, amount, 'credit');
 };
 
-export const makePayment = async (accountId, amount) => {
-  const account = await findAccountById(accountId);
+export const makePayment = async (userId, accountId, amount) => {
+  const account = await findAccountById(userId, accountId);
   if (!account) {
     throw new createError(404, 'Account not found');
   }
@@ -44,7 +44,7 @@ export const makePayment = async (accountId, amount) => {
     throw new createError(400, 'Insufficient funds in the account');
   }
 
-  await updateAccountBalance(accountId, amount, 'debit');
+  await updateAccountBalance(userId, accountId, amount, 'debit');
   await createTransaction(accountId, amount, 'debit');
 };
 

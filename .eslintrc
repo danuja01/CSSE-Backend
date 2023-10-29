@@ -1,9 +1,10 @@
 {
   "extends": ["@sliit-foss/eslint-config-internal"],
+  "parser": "babel-eslint", // This line is required to fix "unexpected token" errors
   "env": {
     "browser": false,
     "node": true,
-    "jest": true,
+    "mocha": true,
     "es6": true
   },
   "rules": {
