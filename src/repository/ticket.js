@@ -29,10 +29,15 @@ export const getAllTickets = async ({ sort = {}, filter = {}, page = 1, limit = 
             $match: filter
           }
         ]);
-  
-      return (page ? await Ticket.aggregatePaginate(aggregateQuery(), options) : aggregateQuery()).catch((err) => {
-        logger.error(`An error occurred when retrieving tickets - err: ${err.message}`);
-        throw err;
+        
+      return page
+      ? await Ticket.aggregatePaginate(aggregateQuery(), options).catch((err) => {
+          logger.error(`An error occurred when retrieving bus routes - err: ${err.message}`);
+          throw err;
+      })
+      : aggregateQuery().catch((err) => {
+          logger.error(`An error occurred when retrieving bus routes - err: ${err.message}`);
+          throw err;
       });
     } catch (err) {
       logger.error(`An error occurred when retrieving tickets - err: ${err.message}`);

@@ -1,5 +1,5 @@
 import createError from 'http-errors';
-
+import { getAccountByUserIdService } from '@/services/account';
 import { getRouteByIdService } from './busRoute';
 import { BusRoute } from '@/models';
 import { createTicket, getAllTickets, getTicketById } from '@/repository/ticket';
@@ -21,7 +21,7 @@ const PRICE_PARAMETERS = {
 export const scanQRService = async (ticketData) => {
   const userId = ticketData.userID;
   const startStop = ticketData.busStop;
-  const endStop = ticket.endStop;
+  const endStop = ticketData.endStop;
   const busRoute = ticketData.busRoute;
 
   const user = await getUserByID(userId);
@@ -29,13 +29,13 @@ export const scanQRService = async (ticketData) => {
     throw new createError(404, 'User not Found');
   }
 
-  const busStops = await getBusStopsService(busRoute);
-  if (!busStops) {
+  const route = await BusRoute.findOne({ _id: busRoute });
+  if (!route) {
     throw new createError(404, 'Bus Route not found');
   }
 
-  const startStopIndex = busStops.indexOf(startStop);
-  const endStopIndex = busStops.indexOf(endStop);
+  const startStopIndex = route.busStops.findIndex((stop) => stop.name === startStop.name);
+  const endStopIndex = route.busStops.findIndex((stop) => stop.name === endStop.name);
 
   if (startStopIndex === -1 || endStopIndex === -1 || endStopIndex < startStopIndex) {
     throw new createError(400, 'Invalid bus stops');
@@ -43,7 +43,9 @@ export const scanQRService = async (ticketData) => {
 
   const price = await calculatePayment(startStopIndex, endStopIndex);
 
-  const transaction = await makePayment(userId, price);
+  const accountId = await getAccountByUserIdService(userId);
+
+  const transaction = await makePayment(userId, accountId, price);
   if (!transaction) {
     throw new createError(500, 'Transaction failed!');
   }

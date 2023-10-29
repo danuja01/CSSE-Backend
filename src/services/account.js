@@ -45,7 +45,8 @@ export const makePayment = async (userId, accountId, amount) => {
   }
 
   await updateAccountBalance(userId, accountId, amount, 'debit');
-  await createTransaction(accountId, amount, 'debit');
+  const transaction = await createTransaction(accountId, amount, 'debit');
+  return transaction;
 };
 
 export const getTransactionHistoryService = async (accountId) => {
