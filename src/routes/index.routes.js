@@ -6,7 +6,8 @@ import authRouter from './auth.routes';
 import routeRouter from './busRoutes.routes';
 import cardRouter from './card.routes';
 import userRouter from './user.routes';
-import ticketRouter from './tickets.routes';
+
+// import ticketRouter from './tickets.routes';
 
 const router = express.Router();
 
