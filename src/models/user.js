@@ -1,3 +1,9 @@
+/**
+ * user model
+ * @author Danuja Jayasuriya
+ * @description This module provides the user model for the database.
+*/
+
 import mongoose from 'mongoose';
 import aggregatePaginate from 'mongoose-aggregate-paginate-v2';
 

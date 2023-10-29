@@ -1,3 +1,11 @@
+/**
+ * account Repository
+ * @author Danuja Jayasuriya
+ * @description This module provides functions to interact with accounts in a database.
+ * @methods createAccount, getAccountByUserId, updateAccountBalance, createTransaction, createTransaction, getTransactionHistory, findAccountById, removeAccount
+*/
+
+
 import { Account, Transaction } from '@/models';
 
 // Specify the correct path to your Account model

@@ -1,3 +1,8 @@
+/**
+ * ticket model
+ * @description This module provides the ticket model for the database.
+*/
+
 import { Schema, model } from 'mongoose';
 import aggregatePaginate from 'mongoose-aggregate-paginate-v2';
 

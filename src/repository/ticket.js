@@ -1,3 +1,10 @@
+/**
+ * Ticket Repository
+ * @author Oshada Thawalampola
+ * @description This module provides functions to interact with tickets in database.
+ * @methods createTicket, getAllTickets, getTicketByid
+*/
+
 import { moduleLogger } from '@sliit-foss/module-logger';
 import mongoose from 'mongoose';
 import Ticket from '@/models/ticket';

@@ -1,3 +1,8 @@
+/**
+ * transaction model
+ * @description This module provides the transaction model for the database.
+*/
+
 import { Schema, model } from 'mongoose';
 import aggregatePaginate from 'mongoose-aggregate-paginate-v2';
 

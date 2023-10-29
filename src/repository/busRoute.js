@@ -1,3 +1,10 @@
+/**
+ * busRoute Repository
+ * @author Supun Kariyawasam
+ * @description This module provides functions to interact with busRoutes in a database.
+ * @methods createRoute, getAllRoutes, getRouteById, findOneAndUpdateRoute, addBusStop, getBusStops
+*/
+
 import { moduleLogger } from '@sliit-foss/module-logger';
 import mongoose from 'mongoose';
 import { BusRoute } from '@/models';

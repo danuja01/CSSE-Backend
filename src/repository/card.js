@@ -1,3 +1,10 @@
+/**
+ * card Repository
+ * @author Sachintha 
+ * @description This module provides functions to interact with cards in a database.
+ * @methods createCard, getAllCards, getCardByUser, getOneCard, findOneAndUpdateCard, findOneAndRemoveCard
+*/
+
 import { moduleLogger } from '@sliit-foss/module-logger';
 import { Card } from '@/models';
 
