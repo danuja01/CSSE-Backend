@@ -28,8 +28,8 @@ export const getBusStopsService = async (routeId) => {
   return busStops;
 };
 
-export const UpdateRouteService = async (filters, data) => {
-  const updatedRoute = await findOneAndUpdateRoute(filters, data);
+export const UpdateRouteService = async (id, data) => {
+  const updatedRoute = await findOneAndUpdateRoute(id, data);
   return updatedRoute;
 };
 
