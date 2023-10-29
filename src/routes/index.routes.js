@@ -15,7 +15,7 @@ router.use('/auth', authRouter);
 router.use('/users', protect, userRouter);
 router.use('/cards', protect, cardRouter);
 router.use('/accounts', protect, accountRouter);
-router.use('/busRoutes', protect, routeRouter);
-// router.use('/tickets', protect, ticketRouter);
+router.use('/busRoutes', routeRouter);
+router.use('/tickets', ticketRouter);
 
 export default router;

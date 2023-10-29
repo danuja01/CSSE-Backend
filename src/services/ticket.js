@@ -1,7 +1,11 @@
 import createError from 'http-errors';
+
+import { getRouteByIdService } from './busRoute';
+import { BusRoute } from '@/models';
 import { createTicket, getAllTickets, getTicketById } from '@/repository/ticket';
 import { makePayment } from '@/services/account';
 import { getUserByID } from '@/services/user';
+
 
 const BUS_PRICES = {
   defaultPrice: 30,
@@ -9,9 +13,10 @@ const BUS_PRICES = {
 };
 
 const PRICE_PARAMETERS = {
-  default: 5,
-  stopsPerIncrement: 5
-};
+    default: 5,
+    stopsPerIncrement: 5
+}
+
 
 export const scanQRService = async (ticketData) => {
   const userId = ticketData.userID;

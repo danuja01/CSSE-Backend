@@ -30,10 +30,15 @@ export const getAllRoutes = async ({ sort = {}, filter = {}, page = 1, limit = 1
         }
       ]);
 
-    return (page ? await BusRoute.aggregatePaginate(aggregateQuery(), options) : aggregateQuery()).catch((err) => {
-      logger.error(`An error occurred when retrieving bus routes - err: ${err.message}`);
-      throw err;
-    });
+      return page
+      ? await BusRoute.aggregatePaginate(aggregateQuery(), options).catch((err) => {
+          logger.error(`An error occurred when retrieving bus routes - err: ${err.message}`);
+          throw err;
+      })
+      : aggregateQuery().catch((err) => {
+          logger.error(`An error occurred when retrieving bus routes - err: ${err.message}`);
+          throw err;
+      });
   } catch (err) {
     logger.error(`An error occurred when retrieving the bus routes - err: ${err.message}`);
     throw err;
@@ -52,11 +57,11 @@ export const getRouteById = async (routeId) => {
   }
 };
 
-export const findOneAndUpdateRoute = async (filters, data) => {
+export const findOneAndUpdateRoute = async (id, data) => {
   try {
-    const route = await BusRoute.findOneAndUpdate(filters, data, { new: true }).lean();
+    const route = await BusRoute.findOneAndUpdate({_id: id}, data, { new: true }).lean();
     if (!route) return null;
-
+    console.log(route);
     return route;
   } catch (err) {
     logger.error(`An error occurred when updating the bus route - err: ${err.message}`);
@@ -66,11 +71,20 @@ export const findOneAndUpdateRoute = async (filters, data) => {
 
 export const addBusStop = async (routeId, busStop) => {
   try {
-    const route = await getRouteById(routeId);
+    const route = await BusRoute.findOne({ _id: routeId });
     if (!route) return null;
 
-    route.busStops.push(busStop);
-    const updatedBusStop = await route.save();
+    const busStops = [...route.busStops, busStop];
+
+    const updatedRouteDetails = {
+      name: route.name,
+      startStop: route.startStop,
+      endStop: route.endStop,
+      busStops: busStops
+    };
+
+    // Save the updated route
+    const updatedBusStop = await BusRoute.findOneAndUpdate({_id: routeId}, updatedRouteDetails, { new: true }).lean();
 
     return updatedBusStop;
   } catch (err) {
@@ -94,6 +108,7 @@ export const getBusStops = async (filters) => {
       }
     ]).exec();
 
+    console.log(busStops);
     return busStops;
   } catch (err) {
     logger.error(`An error occurred when retrieving bus stops - err: ${err.message}`);

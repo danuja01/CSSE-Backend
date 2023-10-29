@@ -24,12 +24,14 @@ export const createBusRoute = async (req, res) => {
 };
 
 export const updateBusRoute = async (req, res) => {
-  const updatedRoute = await UpdateRouteService(req.params.id, req.body);
+  const id = req.params.id;
+  const updatedRoute = await UpdateRouteService(id, req.body);
   return makeResponse({ res, data: updatedRoute, message: 'Bus Route updated successfully' });
 };
 
 export const addBusStop = async (req, res) => {
-  const updatedRoute = await addBusStopService(req.params.id, req.body);
+  const busStop = req.body.busStop;
+  const updatedRoute = await addBusStopService(req.params.id, busStop);
   return makeResponse({ res, data: updatedRoute, message: 'Bus stop added successfully' });
 };
 
